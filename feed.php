@@ -14,6 +14,7 @@ Pages::$methods['feed'] = function($pages, $params = array()) {
     'title'       => 'Feed',
     'description' => '',
     'link'        => url(),
+    'titlefield'  => 'title',
     'datefield'   => 'date',
     'textfield'   => 'text',
     'modified'    => time(),
