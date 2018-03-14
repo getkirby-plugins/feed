@@ -34,10 +34,12 @@ Pages::$methods['feed'] = function($pages, $params = array()) {
   $options['link']  = url($options['link']);
 
   // fetch the modification date
-  if($options['datefield'] == 'modified') {
-    $options['modified'] = $items->first()->modified();
-  } else {
-    $options['modified'] = $items->first()->date(null, $options['datefield']);
+  if($items->count()) {
+    if($options['datefield'] == 'modified') {
+      $options['modified'] = $items->first()->modified();
+    } else {
+      $options['modified'] = $items->first()->date(null, $options['datefield']);
+    }
   }
 
   // send the xml header
